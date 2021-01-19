@@ -1,14 +1,15 @@
-def read_matrix():
-    (rows_count, columns_count) = list(map(int, input().split(', ')))
-    matrix = []
+(rows_count, columns_count) = list(map(int, input().split(', ')))
+
+matrix = []
+
+
+for row in range(rows_count):
+    nums = list(map(int, input().split()))
+    matrix.append(nums)
+
+for column in range(columns_count):
     suma = 0
-    for row_index in range(rows_count):
-        row = list(map(int, input().split(', ')))
-        matrix.append(row)
-        for i in range(len(row)):
-            suma += row[i]
+    for i in range(rows_count):
+        suma += matrix[i][column]
     print(suma)
-    return matrix
 
-
-print(read_matrix())
